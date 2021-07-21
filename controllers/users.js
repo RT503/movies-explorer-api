@@ -1,13 +1,10 @@
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
 const { NODE_ENV, JWT_SECRET } = process.env;
 const User = require('../models/user');
 
 const ExistingEmailError = require('../errors/existing-email-err');
-const NotFoundError = require('../errors/not-found-err');
-const ValidationError = require('../errors/validation-err');
-const EmptyDatabaseError = require('../errors/empty-database-err');
 const BadRequestError = require('../errors/bad-request-err');
 
 const login = (req, res, next) => {
