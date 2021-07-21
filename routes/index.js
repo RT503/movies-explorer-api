@@ -3,7 +3,7 @@ const auth = require('../middlewares/auth');
 const users = require('./users');
 const movies = require('./movies');
 
-const { login , createUser, signout } = require('../controllers/users');
+const { login, createUser, signout } = require('../controllers/users');
 
 const NotFoundError = require('../errors/not-found-err');
 
