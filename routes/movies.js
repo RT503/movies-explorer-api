@@ -6,12 +6,12 @@ const {
 } = require('../middlewares/celebrate');
 
 const {
-  getMuvies,
+  getMovies,
   createMovie,
   deleteMovie,
 } = require('../controllers/movies');
 
-router.get('/', getMuvies);
+router.get('/', getMovies);
 router.post('/', createMovieValidation, createMovie);
 router.delete('/:_id', deleteMovieValidation, deleteMovie);
 
