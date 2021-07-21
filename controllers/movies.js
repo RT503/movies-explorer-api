@@ -3,7 +3,7 @@ const Movie = require('../models/movie');
 const NotFoundError = require('../errors/not-found-err');
 const ForbiddenError = require('../errors/forbidden-err');
 
-const getMuvies = (req, res, next) => {
+const getMovies = (req, res, next) => {
   Movie.find({})
     .then((movies) => {
       if (movies.length === 0) {
@@ -75,7 +75,7 @@ const deleteMovie = (req, res, next) => {
 };
 
 module.exports = {
-  getMuvies,
+  getMovies,
   createMovie,
   deleteMovie,
 };
