@@ -25,7 +25,7 @@ mongoose.connect(BASE_URL, {
 
 const corsConfig = {
   origin: [
-    'https://rt503diploma.nomoredomains.club/',
+    'https://rt503diploma.nomoredomains.club',
     'http://rt503diploma.nomoredomains.club',
     'https://localhost:3000',
     'http://localhost:3000',
