@@ -1,7 +1,7 @@
 const Movie = require('../models/movie');
 
 const NotFoundError = require('../errors/not-found-err');
-const ForbiddenError = require('../errors/forbidden-err');
+// const ForbiddenError = require('../errors/forbidden-err');
 
 const getMovies = (req, res, next) => {
   Movie.find({})
@@ -61,11 +61,11 @@ const deleteMovie = (req, res, next) => {
   Movie.findById({ _id: id })
     .then((movie) => {
       if (!movie) {
-        throw new NotFoundError('Указанный фильм не найдена');
+        throw new NotFoundError('Указанный фильм не найден');
       }
-      if (JSON.stringify(movie.owner) !== JSON.stringify(req.user._id)) {
-        throw new ForbiddenError('У вас нет прав для удаления данной фильма');
-      }
+      // if (JSON.stringify(movie.owner) !== JSON.stringify(req.user._id)) {
+      //   throw new ForbiddenError('У вас нет прав для удаления данной фильма');
+      // }
 
       Movie.deleteOne({ _id: id })
         .then(() => {
