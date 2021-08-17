@@ -6,6 +6,9 @@ const ForbiddenError = require('../errors/forbidden-err');
 const getMovies = (req, res, next) => {
   Movie.find({})
     .then((movies) => {
+        if (movies.length === 0) {
+          throw new NotFoundError('Еще не сохранено ни одного фильма');
+        }
       res.send(movies);
     })
     .catch(next);
@@ -25,6 +28,8 @@ const createMovie = (req, res, next) => {
     nameRU,
     nameEN,
   } = req.body;
+
+  res.send(req.body);
 
   const owner = req.user._id;
 
