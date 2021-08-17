@@ -26,12 +26,13 @@ const login = (req, res, next) => {
         { expiresIn: '7d' },
       );
 
-      res.cookie('jwt', token, {
+      return res.cookie('jwt', token, {
         httpOnly: true,
+        secure: true,
         sameSite: 'none',
         expiresIn: (3600 * 24 * 7),
       })
-        .send({ token });
+        .send({ email: user.email, name: user.name });
     })
     .catch(next);
 };
