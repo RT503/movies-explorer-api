@@ -3,20 +3,20 @@ const validator = require('validator');
 
 const movieSchema = new mongoose.Schema({
   country: {
-    required: true,
     type: String,
+    required: true,
   },
   director: {
     type: String,
     required: true,
   },
   duration: {
-    required: true,
     type: Number,
+    required: true,
   },
   year: {
-    required: true,
     type: Date,
+    required: true,
   },
   description: {
     type: String,
@@ -54,8 +54,8 @@ const movieSchema = new mongoose.Schema({
     required: true,
   },
   movieId: {
-    required: true,
     type: Number,
+    required: true,
   },
   nameRU: {
     required: true,

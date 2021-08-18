@@ -29,8 +29,6 @@ const createMovie = (req, res, next) => {
     nameEN,
   } = req.body;
 
-  res.send(req.body);
-
   const owner = req.user._id;
 
   Movie.create({
@@ -57,7 +55,6 @@ const createMovie = (req, res, next) => {
 
 const deleteMovie = (req, res, next) => {
   const id = req.params._id;
-
   Movie.findById({ _id: id })
     .then((movie) => {
       if (!movie) {
